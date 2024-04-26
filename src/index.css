@@ -9,7 +9,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  font-family: "Kumbh Sans", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -19,7 +19,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 0 2.3rem 0rem;
-  width: 85%;
+  width: 80%;
   margin: auto;
   border-bottom: 1px gray solid;
 }
@@ -31,10 +31,9 @@
 
 .navbar h1 {
   margin: auto;
-  font-size: 3.2em;
+  font-size: 2.8em;
   line-height: 1.1;
   color: black;
-  font-family: "Kumbh Sans", sans-serif;
 }
 
 .nav-links ul {
@@ -66,7 +65,7 @@
 
 .cart-avatar {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -83,8 +82,8 @@
 }
 
 .nav-links li:hover {
-  border-bottom: 5px orange solid;
-  height: 92px;
+  border-bottom: 3px hsl(26, 100%, 55%) solid;
+  height: 5.2rem;
 }
 
 .toggle-button {
@@ -108,6 +107,157 @@
 .unactive{
   display: none;
 }
+
+
+/* CSS content of product component */
+
+.container{
+  display: grid;
+  width: 80%;
+  margin: 3rem auto 0 auto;
+  grid-template-columns: 1fr 1fr;
+  /* padding: 4rem; */
+}
+
+.box{
+  /* height: 600px; */
+  color: black;
+}
+
+.item_details{
+  padding: 3rem 11rem 0rem 2rem;
+  margin: 0;
+  /* gap: ; */
+}
+
+.item_details #title{
+  color: orange;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: small;
+  margin-bottom: -30px;
+}
+
+.item_details  h1{
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+#price-details{
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  height: 2rem;
+}
+
+.item_details > h2{
+  font-size: 1.4rem;
+}
+
+#discount{
+  margin: 0 0 0 1rem;
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+  font-weight: 600;
+  padding: 0 0.4rem 0 0.4rem;
+  font-size: smaller;
+  border-radius: 6px;
+  height: fit-content;
+}
+
+#original-price{
+  text-decoration: line-through;
+  color: hsl(220, 14%, 75%);
+}
+
+.item_details > p{
+  font-size: 1rem;
+  text-align: left;
+  color: hsl(219, 9%, 45%);
+  padding-right: 2rem;
+  font-weight: 400;
+}
+
+.button_wrapper{
+  background-color: hsl(223, 64%, 98%);
+  margin-right: 20px;
+  border-radius: 6px;
+  padding: 0.5rem 0 0.5rem 0;
+  width: fit-content;
+}
+
+.button_wrapper > button{
+  background-color: hsl(223, 64%, 98%);
+  border: none;
+  color: orange;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 50px;
+  text-align: center;
+}
+
+.button_wrapper > p{
+  color: black;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline;
+  padding: 0rem 0.5rem 0rem 0.5rem;
+}
+
+#buttons{
+  display: flex;
+}
+
+#add{
+  background-color: hsl(26, 100%, 55%);
+  border: none;
+  border-radius: 6px;
+  display: inline;
+  width: 56%;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+#add img{
+  height: 14px;
+  margin-right: 1rem;
+}
+
+
+/* Caroussel images styles */
+
+.images{
+  display: grid;
+  grid-template-rows: 1fr 0.3fr;
+}
+
+.big-image{
+  width: 60%;
+  margin: 2rem auto auto auto;
+  border-radius: 15px;
+}
+
+.flex-images{
+  display: flex;
+  width: 60%;
+  gap: 1rem;
+  justify-content: space-evenly;
+  justify-self: center;
+  /* align-self: stretch; */
+}
+
+.small-image{
+  border-radius: 15px;
+  height: 55%;
+  align-self: center;
+}
+
+
+
+
+
 
 @media (min-width: 319px) and (max-width: 480px) {
   .toggle-button {

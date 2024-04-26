@@ -4,6 +4,7 @@ import cart_icon from "../assets/Images/icon-cart.svg";
 import close_icon from "../assets/Images/close.svg";
 import menu_icon from "../assets/Images/menu.svg";
 import NavItems from "./NavItems";
+
 export default function Navbar() {
   const [isToggled, setIsToggled] = useState(false);
 
