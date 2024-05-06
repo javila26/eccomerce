@@ -234,27 +234,25 @@
 }
 
 .big-image{
-  width: 60%;
+  width: 58%;
   margin: 2rem auto auto auto;
   border-radius: 15px;
 }
 
 .flex-images{
   display: flex;
-  width: 60%;
+  width: 58%;
   gap: 1rem;
   justify-content: space-evenly;
   justify-self: center;
-  /* align-self: stretch; */
+  height: 11rem;
 }
 
 .small-image{
   border-radius: 15px;
-  height: 55%;
+  height: 6rem;
   align-self: center;
 }
-
-
 
 
 

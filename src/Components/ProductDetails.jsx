@@ -1,29 +1,42 @@
 import cart_icon from "../assets/Images/icon-cart-white.svg";
 import ImagesCaroussel from "./ImagesCaroussel";
-export default function ProductDetails() {
+import { useState } from "react";
+
+export default function ProductDetails({ products, onAddItemToCart }) {
+  const [itemQuantity, setItemQuantity] = useState(0);
+
+  function handleItemQuantity(amount) {
+    setItemQuantity((prevQuantity) => {
+      if (prevQuantity === 0 && amount === -1) {
+        return 0;
+      } else {
+        return (prevQuantity = prevQuantity + amount);
+      }
+    });
+  }
+
   return (
     <main className="container">
-      <ImagesCaroussel />
+      <ImagesCaroussel productImages={products[0].images} />
       <section className="box item_details">
-        <p id="title">Sneaker Company</p>
-        <h1>Fall Limited Edition Sneakers</h1>
-        <p>
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they'll withstand everything
-          the weather can offer.
-        </p>
+        <p id="title">{products[0].brand}</p>
+        <h1>{products[0].title}</h1>
+        <p>{products[0].description}</p>
         <div id="price-details">
-          <h2>$125.00</h2>
-          <p id="discount">50%</p>
+          <h2>${products[0].price * products[0].discount}.00</h2>
+          <p id="discount">{products[0].discount * 100}%</p>
         </div>
-        <h4 id="original-price">$250.00</h4>
+        <h4 id="original-price">${products[0].price}.00</h4>
         <div id="buttons">
           <div className="button_wrapper">
-            <button>-</button>
-            <p>10</p>
-            <button>+</button>
+            <button onClick={() => handleItemQuantity(-1)}>-</button>
+            <p>{itemQuantity}</p>
+            <button onClick={() => handleItemQuantity(1)}>+</button>
           </div>
-          <button id="add">
+          <button
+            id="add"
+            onClick={() => onAddItemToCart(products[0].id, itemQuantity)}
+          >
             <img src={cart_icon} />
             Add To Cart
           </button>

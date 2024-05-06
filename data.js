@@ -10,25 +10,25 @@ export const PRODUCTS = [
     quantity: 0,
     images: [
       {
-        id: 1,
+        id: 0,
         alt: "Sneakers Front View",
         image: "./src/assets/Images/image-product-1.jpg",
         thumb: "./src/assets/Images/image-product-1-thumbnail.jpg",
       },
       {
-        id: 2,
+        id: 1,
         alt: "Sneakers Back View",
         image: "./src/assets/Images/image-product-2.jpg",
         thumb: "./src/assets/Images/image-product-2-thumbnail.jpg",
       },
       {
-        id: 3,
+        id: 2,
         alt: "Sneakers Diagonal View",
         image: "./src/assets/Images/image-product-3.jpg",
         thumb: "./src/assets/Images/image-product-3-thumbnail.jpg",
       },
       {
-        id: 4,
+        id: 3,
         alt: "Sneakers Lateral View",
         image: "./src/assets/Images/image-product-4.jpg",
         thumb: "./src/assets/Images/image-product-4-thumbnail.jpg",

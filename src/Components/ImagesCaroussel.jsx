@@ -1,35 +1,51 @@
-import { PRODUCTS } from "../../data.js";
+import { useState } from "react";
 
-// console.log(PRODUCTS[0].images[0]);
+export default function ImagesCaroussel({ productImages }) {
+  const [mainImage, setMainImage] = useState(0);
 
-export default function ImagesCaroussel() {
+  function handleClick(id) {
+    setMainImage(id);
+  }
+
   return (
     <aside className="box images">
       <img
         className="big-image"
-        src={PRODUCTS[0].images[0].image}
-        alt={PRODUCTS[0].images[0].alt}
+        src={productImages[mainImage].image}
+        alt={productImages[mainImage].alt}
       />
       <div className="images flex-images">
         <img
           className="small-image"
-          src={PRODUCTS[0].images[0].thumb}
-          alt={PRODUCTS[0].images[0].alt}
+          onClick={() => {
+            handleClick(productImages[0].id);
+          }}
+          src={productImages[0].thumb}
+          alt={productImages[0].alt}
         />
         <img
           className="small-image"
-          src={PRODUCTS[0].images[1].thumb}
-          alt={PRODUCTS[0].images[0].alt}
+          onClick={() => {
+            handleClick(productImages[1].id);
+          }}
+          src={productImages[1].thumb}
+          alt={productImages[1].alt}
         />
         <img
           className="small-image"
-          src={PRODUCTS[0].images[2].thumb}
-          alt={PRODUCTS[0].images[0].alt}
+          onClick={() => {
+            handleClick(productImages[2].id);
+          }}
+          src={productImages[2].thumb}
+          alt={productImages[2].alt}
         />
         <img
           className="small-image"
-          src={PRODUCTS[0].images[3].thumb}
-          alt={PRODUCTS[0].images[0].alt}
+          onClick={() => {
+            handleClick(productImages[3].id);
+          }}
+          src={productImages[3].thumb}
+          alt={productImages[3].alt}
         />
       </div>
     </aside>
