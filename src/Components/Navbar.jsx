@@ -4,12 +4,19 @@ import cart_icon from "../assets/Images/icon-cart.svg";
 import close_icon from "../assets/Images/close.svg";
 import menu_icon from "../assets/Images/menu.svg";
 import NavItems from "./NavItems";
+import Cart from "./Cart";
 
-export default function Navbar() {
+export default function Navbar({ cartItems, onRemoveItem }) {
   const [isToggled, setIsToggled] = useState(false);
 
   function handleClick() {
     setIsToggled((prevToggleState) => !prevToggleState);
+  }
+
+  const [isCartToggled, setCartIsToggled] = useState(false);
+
+  function handleCartClick() {
+    setCartIsToggled((prevToggleState) => !prevToggleState);
   }
 
   return (
@@ -42,7 +49,17 @@ export default function Navbar() {
       </div>
       <section className="cart-avatar">
         <span>
-          <img id="cart" src={cart_icon} alt="cart icon" />
+          <img
+            id="cart-icon"
+            src={cart_icon}
+            alt="cart icon"
+            onClick={handleCartClick}
+          />
+          <Cart
+            toggle={isCartToggled}
+            cartItems={cartItems}
+            onRemoveItem={onRemoveItem}
+          />
         </span>
         <img id="picture" src={image_avatar} alt="profile picture" />
       </section>

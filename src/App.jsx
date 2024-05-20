@@ -30,6 +30,7 @@ function App() {
           price: product.price,
           discount: product.discount,
           quantity: itemsAmount,
+          image: product.images[0].thumb,
         });
       }
 
@@ -39,11 +40,31 @@ function App() {
     });
   }
 
-  console.log(cartItems.items);
+  function handleRemoveItem(id) {
+    setCartItems((prevItems) => {
+      const updatedItems = [...prevItems.items];
+
+      const existingCartItemIndex = updatedItems.findIndex(
+        (cartItem) => cartItem.id === id
+      );
+
+      const existingCartItem = updatedItems[existingCartItemIndex];
+
+      console.log(existingCartItemIndex);
+
+      if (existingCartItem) {
+        updatedItems.splice(existingCartItemIndex, 1);
+      }
+
+      return {
+        items: updatedItems,
+      };
+    });
+  }
 
   return (
     <>
-      <Navbar />
+      <Navbar cartItems={cartItems.items} onRemoveItem={handleRemoveItem} />
       <ProductDetails
         onAddItemToCart={handleAddItemToCart}
         products={PRODUCTS}

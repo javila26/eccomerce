@@ -1,7 +1,7 @@
 import cart_icon from "../assets/Images/icon-cart-white.svg";
 import ImagesCaroussel from "./ImagesCaroussel";
 import { useState } from "react";
-
+import { formatter } from "../util/numberFormat";
 export default function ProductDetails({ products, onAddItemToCart }) {
   const [itemQuantity, setItemQuantity] = useState(0);
 
@@ -23,10 +23,10 @@ export default function ProductDetails({ products, onAddItemToCart }) {
         <h1>{products[0].title}</h1>
         <p>{products[0].description}</p>
         <div id="price-details">
-          <h2>${products[0].price * products[0].discount}.00</h2>
+          <h2>{formatter.format(products[0].price * products[0].discount)}</h2>
           <p id="discount">{products[0].discount * 100}%</p>
         </div>
-        <h4 id="original-price">${products[0].price}.00</h4>
+        <h4 id="original-price">{formatter.format(products[0].price)}</h4>
         <div id="buttons">
           <div className="button_wrapper">
             <button onClick={() => handleItemQuantity(-1)}>-</button>
@@ -36,6 +36,7 @@ export default function ProductDetails({ products, onAddItemToCart }) {
           <button
             id="add"
             onClick={() => onAddItemToCart(products[0].id, itemQuantity)}
+            disabled={itemQuantity === 0}
           >
             <img src={cart_icon} />
             Add To Cart

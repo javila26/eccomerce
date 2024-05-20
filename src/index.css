@@ -42,6 +42,7 @@
   padding: 0;
   display: flex;
   font-size: 1.2rem;
+  height: 5.3rem;
   /* border: 1px black solid; */
 }
 
@@ -67,14 +68,16 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
 }
 
 #picture{
   height: 3rem;
 }
 
-#cart{
+#cart-icon{
   height: 1.6rem;
+  cursor: pointer;
 }
 
 .nav-links span {
@@ -83,7 +86,7 @@
 
 .nav-links li:hover {
   border-bottom: 3px hsl(26, 100%, 55%) solid;
-  height: 5.2rem;
+  height: 99%;
 }
 
 .toggle-button {
@@ -102,10 +105,6 @@
   width: 100%;
   background-color: gray;
   border-radius: 1rem;
-}
-
-.unactive{
-  display: none;
 }
 
 
@@ -181,48 +180,67 @@
 
 .button_wrapper{
   background-color: hsl(223, 64%, 98%);
-  margin-right: 20px;
   border-radius: 6px;
-  padding: 0.5rem 0 0.5rem 0;
+  padding: 0.5rem;
   width: fit-content;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .button_wrapper > button{
   background-color: hsl(223, 64%, 98%);
   border: none;
-  color: orange;
+  color: hsl(26, 100%, 55%);
   font-weight: 600;
-  font-size: 1rem;
-  width: 50px;
-  text-align: center;
+  font-size: 2rem;
+  width: 55px;
+  padding: 0;
 }
 
 .button_wrapper > p{
   color: black;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
   display: inline;
-  padding: 0rem 0.5rem 0rem 0.5rem;
+  width: 21px;
+  padding-left: 7px;
 }
 
 #buttons{
   display: flex;
+  gap: 20px;
 }
 
 #add{
   background-color: hsl(26, 100%, 55%);
   border: none;
-  border-radius: 6px;
+  border-radius: 7px;
   display: inline;
-  width: 56%;
+  width: 58%;
+  height: 3rem;
   font-family: "Kumbh Sans", sans-serif;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 #add img{
   height: 14px;
   margin-right: 1rem;
+}
+
+#add:hover{
+  cursor: pointer;
+}
+
+.button_wrapper > button{
+  cursor: pointer;
+}
+
+#add:active:not(:disabled){
+  background-color: hsl(26, 100%, 35%);
+  transform: scale(0.95);
 }
 
 
@@ -234,14 +252,13 @@
 }
 
 .big-image{
-  width: 58%;
+  width: 27.5rem;
   margin: 2rem auto auto auto;
   border-radius: 15px;
 }
 
 .flex-images{
   display: flex;
-  width: 58%;
   gap: 1rem;
   justify-content: space-evenly;
   justify-self: center;
@@ -250,14 +267,129 @@
 
 .small-image{
   border-radius: 15px;
-  height: 6rem;
+  height: 56%;
   align-self: center;
 }
 
+.opacity{
+  opacity: 50%;
+  border: 3px solid rgba(255, 125, 26);
+}
 
+
+/* Styles for Cart component */
+.items-cart{
+  color: white;
+  position: absolute;
+  bottom: 1.8rem;
+  left: 0.9rem;
+  background-color: hsl(26, 100%, 55%);
+  border-radius: 7px;
+  padding: 0.1rem;
+  font-size: 0.5rem;
+  width: 1rem;
+  text-align: center;
+}
+
+#cart{
+  width: 24rem;
+  background-color: white;
+  box-shadow: 0px 3px 5px #cbc8c8;
+  border-radius: 5px;
+  position: absolute;
+  right: 0px;
+  top: 3rem;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.cart-content{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  /* margin-top: 1rem; */
+}
+
+#cart-header{
+  font-size: 1.3rem;
+  padding: 15px 0 15px 20px;
+  width: 90%;
+  border-bottom: 1px solid #cbc8c8;
+}
+
+#cart > div{
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-content> div > h3{
+ margin: 0px;
+ color: gray;
+ font-weight: 400;
+}
+
+.cart-content> div > span{
+  margin: 0px;
+  color: gray;
+  font-weight: 400;
+ }
+
+#price{
+  color: black;
+  font-weight: 700;
+}
+
+#delete{
+  height: 50px;
+  background-color: white;
+  border: none;
+}
+
+#delete:hover{
+cursor: pointer;
+}
+
+.cart-content > img{
+  height: 60px;
+  border-radius: 7px;
+}
+
+#cart > button{
+  margin-bottom: 20px;
+  background-color: hsl(26, 100%, 55%);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 7px;
+  width: 90%;
+  padding: 0.8rem;
+  font-weight: 600;
+}
+
+.unactive{
+  display: none !important;
+}
+
+#fallback-header{
+  border: none;
+  font-size: 1.3rem;
+  padding: 5rem;
+  color: gray;
+}
 
 
 @media (min-width: 319px) and (max-width: 480px) {
+
+  .container{
+    grid-template-columns: 1fr;
+    /* padding: 4rem; */
+  }
+  
+
   .toggle-button {
     display: flex;
   }
@@ -313,10 +445,11 @@
   #picture {
     height: 1.8rem;
   }
-  
-  #cart{
-    height: 1.5rem;
-  }
+
+#cart{
+  position: absolute;
+  right: -3rem;
+}
 
   .nav-links li:hover {
     border-bottom: 5px orange solid;
