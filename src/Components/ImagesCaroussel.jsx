@@ -1,19 +1,65 @@
 import { useState } from "react";
+import leftArrow from "../assets/Images/icon-previous.svg";
+import rightArrow from "../assets/Images/icon-next.svg";
 
-export default function ImagesCaroussel({ productImages }) {
+export default function ImagesCaroussel({
+  productImages,
+  onClickOpen,
+  isOpen,
+}) {
   const [mainImage, setMainImage] = useState(0);
 
   function handleClick(id) {
-    setMainImage(id);
+    setMainImage(() => {
+      return id;
+    });
+  }
+
+  function handleNextImage(nextStep) {
+    setMainImage((prevMainImageId) => {
+      if (prevMainImageId === 3) {
+        return prevMainImageId;
+      } else {
+        return prevMainImageId + nextStep;
+      }
+    });
+  }
+
+  function handlePreviousImage(nextStep) {
+    setMainImage((prevMainImageId) => {
+      if (prevMainImageId === 0) {
+        return prevMainImageId;
+      } else {
+        return prevMainImageId - nextStep;
+      }
+    });
   }
 
   return (
     <aside className="box images">
-      <img
-        className="big-image"
-        src={productImages[mainImage].image}
-        alt={productImages[mainImage].alt}
-      />
+      <div className="carousel">
+        <button
+          className="arrow arrow-left"
+          onClick={() => handlePreviousImage(1)}
+        >
+          <img src={leftArrow} alt="left-arrow" />
+        </button>
+
+        <img
+          className={"big-image fadeToRight"}
+          src={productImages[mainImage].image}
+          alt={productImages[mainImage].alt}
+          onClick={onClickOpen}
+        />
+
+        <button
+          className="arrow arrow-right"
+          onClick={() => handleNextImage(1)}
+        >
+          <img src={rightArrow} alt="left-arrow" />
+        </button>
+      </div>
+
       <div className="flex-images">
         {productImages.map((image) => (
           <img

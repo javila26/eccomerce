@@ -1,9 +1,14 @@
 import cart_icon from "../assets/Images/icon-cart-white.svg";
 import ImagesCaroussel from "./ImagesCaroussel";
+import ImageModal from "./ImageModal";
 import { useState } from "react";
 import { formatter } from "../util/numberFormat";
+
 export default function ProductDetails({ products, onAddItemToCart }) {
   const [itemQuantity, setItemQuantity] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const width = window.innerWidth;
 
   function handleItemQuantity(amount) {
     setItemQuantity((prevQuantity) => {
@@ -15,9 +20,31 @@ export default function ProductDetails({ products, onAddItemToCart }) {
     });
   }
 
+  function handleOpenModal() {
+    setIsOpen(true);
+  }
+
+  function handleCloseModal() {
+    setIsOpen(false);
+  }
+
   return (
     <main className="container">
-      <ImagesCaroussel productImages={products[0].images} />
+      {width > 1080 && (
+        <ImageModal
+          products={products[0].images}
+          isOpen={isOpen}
+          onClickClose={handleCloseModal}
+          onClickOpen={handleOpenModal}
+        />
+      )}
+
+      <ImagesCaroussel
+        productImages={products[0].images}
+        onClickOpen={handleOpenModal}
+        onClickClose={handleCloseModal}
+        isOpen={isOpen}
+      />
       <section className="box item_details">
         <p id="title">{products[0].brand}</p>
         <h1>{products[0].title}</h1>

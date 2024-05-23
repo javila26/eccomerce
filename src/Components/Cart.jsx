@@ -35,7 +35,7 @@ export default function Cart({ toggle, cartItems, onRemoveItem }) {
       <section id="cart" className={!toggle ? "unactive" : null}>
         <h1 id="cart-header">Cart</h1>
         {contentToRender}
-        {cartItems.length > 0 ? <button>Checkout</button> : null}
+        {cartItems.length > 0 ? <button id="checkout">Checkout</button> : null}
       </section>
     </>
   );
