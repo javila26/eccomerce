@@ -1,8 +1,8 @@
 import { useState } from "react";
-import image_avatar from "../assets/Images/image-avatar.png";
-import cart_icon from "../assets/Images/icon-cart.svg";
-import close_icon from "../assets/Images/close.svg";
-import menu_icon from "../assets/Images/menu.svg";
+import image_avatar from "../../public/images/image-avatar.png";
+import cart_icon from "../../public/images/icon-cart.svg";
+import close_icon from "../../public/images/close.svg";
+import menu_icon from "../../public/images/menu.svg";
 import NavItems from "./NavItems";
 import Cart from "./Cart";
 
