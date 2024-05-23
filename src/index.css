@@ -77,7 +77,12 @@ body{
 
 #picture{
   height: 3rem;
+  border-radius: 50%;
 }
+
+#picture:hover {
+  border: 2px solid hsl(26, 100%, 55%);
+}  
 
 #cart-icon{
   height: 1.6rem;
@@ -94,7 +99,6 @@ body{
 }
 
 .toggle-button {
-  /* position: absolute; */
   top: 1.25rem;
   left: 1.5rem;
   display: none;
@@ -123,7 +127,6 @@ body{
 }
 
 .box{
-  /* height: 600px; */
   color: black;
 }
 
@@ -321,7 +324,6 @@ body{
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  /* margin-top: 1rem; */
 }
 
 #cart-header{

@@ -2,11 +2,7 @@ import { useState } from "react";
 import leftArrow from "../assets/Images/icon-previous.svg";
 import rightArrow from "../assets/Images/icon-next.svg";
 
-export default function ImagesCaroussel({
-  productImages,
-  onClickOpen,
-  isOpen,
-}) {
+export default function ImagesCaroussel({ productImages, onClickOpen }) {
   const [mainImage, setMainImage] = useState(0);
 
   function handleClick(id) {
