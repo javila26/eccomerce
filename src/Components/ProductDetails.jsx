@@ -1,4 +1,4 @@
-import cart_icon from "../../public/images/icon-cart-white.svg";
+import cart_icon from "/assets/icon-cart-white.svg";
 import ImagesCaroussel from "./ImagesCaroussel";
 import ImageModal from "./ImageModal";
 import { useState } from "react";

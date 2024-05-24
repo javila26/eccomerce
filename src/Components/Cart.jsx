@@ -1,4 +1,4 @@
-import delete_icon from "../../public/images/icon-delete.svg";
+import delete_icon from "/assets/icon-delete.svg";
 import { formatter } from "../util/numberFormat";
 
 export default function Cart({ toggle, cartItems, onRemoveItem }) {
