@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor - Ecommerce Solution](https://www.frontendmentor.io/solutions/ecommerce-made-with-react-and-css-ZZlUOdpHei)
+- Live Site URL: [Live website](https://eccomerce-teal.vercel.app/)
 
 ## My process
 
