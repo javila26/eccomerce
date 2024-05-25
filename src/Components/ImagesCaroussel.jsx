@@ -1,5 +1,5 @@
 import { useState } from "react";
-import leftArrow from "/assets/icon-next.svg";
+import leftArrow from "/assets/icon-previous.svg";
 import rightArrow from "/assets/icon-next.svg";
 
 export default function ImagesCaroussel({ productImages, onClickOpen }) {
